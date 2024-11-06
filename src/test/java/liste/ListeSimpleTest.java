@@ -256,4 +256,54 @@ class ListeSimpleTest {
         System.out.println(listeATester);
         assertEquals("ListeSimple(Noeud(4), Noeud(2), Noeud(3), Noeud(1), Noeud(5))",listeATester.toString());
     }
+
+    /* Tests rajoutés pour couverture à 100% */
+    @Test
+    void supprimePremierElementInexistant() {
+        listeATester.ajout(1);
+        listeATester.supprimePremier(99);
+        assertEquals("ListeSimple(Noeud(1))", listeATester.toString());
+    }
+    
+    @Test
+    void supprimeTousElementInexistant() {
+        listeATester.ajout(1);
+        listeATester.supprimeTous(99);
+        assertEquals("ListeSimple(Noeud(1))", listeATester.toString());
+    }
+
+    @Test
+    void echangerLePremierAvecLeDeuxieme() {
+        listeATester.ajout(1);
+        listeATester.ajout(2);
+        Noeud r1 = listeATester.tete;
+        Noeud r2 = listeATester.tete.getSuivant();
+        listeATester.echanger(r1, r2);
+        assertEquals("ListeSimple(Noeud(2), Noeud(1))", listeATester.toString());  // Premier et deuxième échangés
+    }
+
+    @Test
+    void echangerNoeudAvecLuiMeme() {
+        listeATester.ajout(1);
+        Noeud r1 = listeATester.tete;
+        listeATester.echanger(r1, r1);
+        assertEquals("ListeSimple(Noeud(1))", listeATester.toString());
+    }
+
+    @Test
+    void modifiePremierListeVide() {
+        assertThrows(IllegalArgumentException.class, () -> listeATester.modifiePremier(1, 2));
+    }
+
+    @Test
+    void toStringListeVide() {
+        assertEquals("ListeSimple()", listeATester.toString());
+    }
+
+    @Test
+    void toStringListeUnElement() {
+        listeATester.ajout(1);
+        assertEquals("ListeSimple(Noeud(1))", listeATester.toString());
+
+
 }
