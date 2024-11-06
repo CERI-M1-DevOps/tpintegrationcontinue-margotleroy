@@ -304,6 +304,19 @@ class ListeSimpleTest {
     void toStringListeUnElement() {
         listeATester.ajout(1);
         assertEquals("ListeSimple(Noeud(1))", listeATester.toString());
+    }
 
+    @Test
+    void inverserListeAvecUnElement() {
+        listeATester.ajout(1);
+        listeATester.inverser();
+        assertEquals("ListeSimple(Noeud(1))", listeATester.toString());
+    }
+
+    @Test
+    void inverserListeVide() {
+        listeATester.inverser();
+        assertNull(listeATester.tete);
+    }
 
 }
