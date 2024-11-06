@@ -50,7 +50,7 @@ class ListeSimpleTest {
         listeATester.ajout(2);
         listeATester.ajout(3);
         System.out.println(listeATester);
-        assert listeATester.toString().equals("[1, 2, 3]") : "La liste ne contient pas les éléments attendus.";
+        assertEquals("ListeSimple(Noeud(3), Noeud(4), Noeud(1))", listeATester.toString());
     }
 
     @Test
