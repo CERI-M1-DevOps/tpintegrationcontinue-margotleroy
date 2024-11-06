@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class ListeSimpleTest {
+class ListeSimpleTest {
 
     ListeSimple listeATester;
 
@@ -15,19 +15,19 @@ public class ListeSimpleTest {
     }
 
     @Test
-    public void listeConstruiteVide() {
+    void listeConstruiteVide() {
         assertNull(listeATester.tete);
         assertEquals(0, listeATester.getSize());
     }
 
     @Test
-    public void ajoutAugmenteSize() {
+    void ajoutAugmenteSize() {
         listeATester.ajout(1);
         assertEquals(1, listeATester.getSize());
     }
 
     @Test
-    public void ajoutChangeTete() {
+    void ajoutChangeTete() {
         listeATester.ajout(1);
         Noeud teteApresPremierAjout = listeATester.tete;
         listeATester.ajout(1);
@@ -36,7 +36,7 @@ public class ListeSimpleTest {
     }
 
     @Test
-    public void ajoutPlusieursFoisLeMeme() {
+    void ajoutPlusieursFoisLeMeme() {
         listeATester.ajout(1);
         listeATester.ajout(1);
         listeATester.ajout(1);
@@ -44,21 +44,22 @@ public class ListeSimpleTest {
     }
 
     @Test
-    public void toStringDonneTousLesNoeuds() {
+    void toStringDonneTousLesNoeuds() {
         System.out.println(listeATester);
         listeATester.ajout(1);
         listeATester.ajout(2);
         listeATester.ajout(3);
         System.out.println(listeATester);
+        assert listeATester.toString().equals("[1, 2, 3]") : "La liste ne contient pas les éléments attendus.";
     }
 
     @Test
-    public void modifiePremier() {
+    void modifiePremier() {
         listeATester.ajout(1);
         listeATester.ajout(2);
         listeATester.ajout(3);
         listeATester.modifiePremier(2, 4);
-        assertEquals(listeATester.toString(), "ListeSimple(Noeud(3), Noeud(4), Noeud(1))");
+        assertEquals("ListeSimple(Noeud(3), Noeud(4), Noeud(1))", listeATester.toString());
         assertEquals(4, listeATester.tete.getSuivant().getElement());
     }
 
