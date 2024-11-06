@@ -162,25 +162,25 @@ class ListeSimpleTest {
     }
 
     @Test
-    public void avantDernierListeVide() {
+    void avantDernierListeVide() {
         assertNull(listeATester.getAvantDernier());
     }
 
     @Test
-    public void avantDernierListeAUnElement() {
+    void avantDernierListeAUnElement() {
         listeATester.ajout(1);
         assertNull(listeATester.getAvantDernier());
     }
 
     @Test
-    public void avantDernierListeADeuxElements() {
+    void avantDernierListeADeuxElements() {
         listeATester.ajout(1);
         listeATester.ajout(2);
         assertEquals(2, listeATester.getAvantDernier().getElement());
     }
 
     @Test
-    public void avantDernierListeAPlusieursElements() {
+    void avantDernierListeAPlusieursElements() {
         listeATester.ajout(1);
         listeATester.ajout(2);
         listeATester.ajout(3);
@@ -189,13 +189,13 @@ class ListeSimpleTest {
     }
 
     @Test
-    public void inverserListeVide() {
+    void inverserListeVide() {
         listeATester.inverser();
         assertNull(listeATester.tete);
     }
 
     @Test
-    public void inverserListeNbPairDElements() {
+    void inverserListeNbPairDElements() {
         listeATester.ajout(1);
         listeATester.ajout(2);
         listeATester.ajout(3);
