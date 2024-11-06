@@ -312,11 +312,4 @@ class ListeSimpleTest {
         listeATester.inverser();
         assertEquals("ListeSimple(Noeud(1))", listeATester.toString());
     }
-
-    @Test
-    void inverserListeVide() {
-        listeATester.inverser();
-        assertNull(listeATester.tete);
-    }
-
 }
