@@ -8,7 +8,6 @@ public class ListeSimple {
      * Retourne la taille de la liste.
      * @return La taille de la liste.
      */
-    
     public long getSize() {
         return size;
     }
@@ -17,7 +16,12 @@ public class ListeSimple {
         tete = new Noeud(element, tete);
         size++;
     }
-
+    
+    /**
+     * Modifie la première occurrence d'un élément dans la liste.
+     * @param element L'élément à rechercher dans la liste.
+     * @param nouvelleValeur La nouvelle valeur pour remplacer l'élément trouvé.
+     */
     public void modifiePremier(Object element, Object nouvelleValeur) {
         Noeud courant = tete;
         while (courant != null && courant.getElement() != element)
