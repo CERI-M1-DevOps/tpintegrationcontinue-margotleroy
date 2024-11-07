@@ -4,6 +4,11 @@ public class ListeSimple {
     private long size;
     Noeud tete;
 
+    /**
+     * Retourne la taille de la liste.
+     * @return La taille de la liste.
+     */
+    
     public long getSize() {
         return size;
     }
