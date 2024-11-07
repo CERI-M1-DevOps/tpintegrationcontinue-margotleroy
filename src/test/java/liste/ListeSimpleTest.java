@@ -81,7 +81,7 @@ class ListeSimpleTest {
         assertEquals(0, listeATester.getSize());
     }
 
-    /* @Test
+    @Test
     void supprimePremierEnPremierePosition() {
         listeATester.ajout(1);
         listeATester.ajout(2);
@@ -89,7 +89,7 @@ class ListeSimpleTest {
         listeATester.supprimePremier(3);
         assertEquals("ListeSimple(Noeud(2), Noeud(1))", listeATester.toString());
         assertEquals(2, listeATester.getSize());
-    } */
+    }
 
     @Test
     void supprimePremierEnPositionQuelconque() {
@@ -268,7 +268,7 @@ class ListeSimpleTest {
         assertEquals("ListeSimple(Noeud(3), Noeud(2), Noeud(1))", listeATester.toString());
     }
 
-    /*@Test
+    @Test
     void supprimePremierElementTrouveEtSupprime() {
         listeATester.ajout(1);
         listeATester.ajout(2);
@@ -287,7 +287,7 @@ class ListeSimpleTest {
         listeATester.supprimePremier(4); // L'élément "4" n'est pas dans la liste.
         assertEquals("ListeSimple(Noeud(3), Noeud(2), Noeud(1))", listeATester.toString());
         assertEquals(3, listeATester.getSize());
-    }*/
+    }
 
     @Test
     void echangerMemeNoeud() {
@@ -301,27 +301,5 @@ class ListeSimpleTest {
         assertEquals("ListeSimple(Noeud(3), Noeud(2), Noeud(1))", listeATester.toString());
         assertEquals(3, listeATester.getSize());
     }
-
-    @ParameterizedTest
-    @CsvSource({
-        "3, '1,2,3', 'ListeSimple(Noeud(2), Noeud(1))', 2",  // Supprime en première position
-        "2, '1,2,3', 'ListeSimple(Noeud(3), Noeud(1))', 2",  // Supprime un élément au milieu
-        "4, '1,2,3', 'ListeSimple(Noeud(3), Noeud(2), Noeud(1))', 3"  // Element absent, pas de modification
-    })
-    void testSupprimePremier(int elementToRemove, String initialElements, String expectedString, int expectedSize) {
-        // Initialisation de la liste avec les éléments
-        listeATester = new ListeSimple();
-        for (String el : initialElements.split(",")) {
-            listeATester.ajout(Integer.parseInt(el.trim()));
-        }
-
-        // Exécution de la méthode à tester
-        listeATester.supprimePremier(elementToRemove);
-
-        // Assertions
-        assertEquals(expectedString, listeATester.toString());
-        assertEquals(expectedSize, listeATester.getSize());
-    }
-
 
 }
