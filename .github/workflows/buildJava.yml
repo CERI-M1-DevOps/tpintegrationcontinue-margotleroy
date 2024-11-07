@@ -31,7 +31,7 @@ jobs:
         uses: actions/cache@v4
         with:
           path: ~/.sonar
-          key: ${{ runner.os }}-sonarqube-${{ hashFiles('**/pom.xml') }}
+          key: ${{ runner.os }}-sonarqube-${{ hashFiles('**/*.java') }}
           restore-keys: |
             ${{ runner.os }}-sonarqube-
       
