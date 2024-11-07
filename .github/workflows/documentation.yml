@@ -1,0 +1,32 @@
+name: Generate and Deploy Documentation
+
+on:
+  pull_request:
+    types:
+      - closed  # Se déclenche lorsque la PR est fusionnée
+    branches:
+      - main  # S'applique à la branche main
+
+jobs:
+  generate-and-deploy-docs:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Java 11
+        uses: actions/setup-java@v3
+        with:
+          java-version: '11'
+          distribution: 'adoptopenjdk'
+
+      - name: Build and generate Javadoc
+        run: mvn -B javadoc:javadoc
+
+      - name: Deploy documentation to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./target/site/apidocs
+          destination_dir: docs
