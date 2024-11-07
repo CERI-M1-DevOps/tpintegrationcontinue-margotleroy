@@ -268,17 +268,6 @@ class ListeSimpleTest {
         assertEquals("ListeSimple(Noeud(3), Noeud(2), Noeud(1))", listeATester.toString());
     }
 
-    /*@Test
-    void supprimePremierElementTrouveEtSupprime() {
-        listeATester.ajout(1);
-        listeATester.ajout(2);
-        listeATester.ajout(3);
-        listeATester.supprimePremier(2); // L'élément "2" est présent et sera supprimé.
-        // Vérifie que l'élément 2 est supprimé correctement et que la taille est décrémentée.
-        assertEquals("ListeSimple(Noeud(3), Noeud(1))", listeATester.toString());
-        assertEquals(2, listeATester.getSize());
-    }*/
-
     @Test
     void supprimePremierElementAbsentPasDeModification() {
         listeATester.ajout(1);
