@@ -267,4 +267,14 @@ class ListeSimpleTest {
         // Vérifie que la liste reste inchangée car l'élément 5 n'est pas présent
         assertEquals("ListeSimple(Noeud(3), Noeud(2), Noeud(1))", listeATester.toString());
     }
+
+    void supprimePremierElementAbsent() {
+        listeATester.ajout(1);
+        listeATester.ajout(2);
+        listeATester.ajout(3);
+        listeATester.supprimePremier(5); // L'élément "5" n'est pas dans la liste.
+        // Vérifie que la liste reste inchangée car l'élément 5 n'est pas présent.
+        assertEquals("ListeSimple(Noeud(3), Noeud(2), Noeud(1))", listeATester.toString());
+        assertEquals(3, listeATester.getSize());
+    }
 }
