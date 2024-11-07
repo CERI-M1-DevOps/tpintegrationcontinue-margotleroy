@@ -39,6 +39,10 @@ public class ListeSimple {
         }
     }
 
+     /**
+     * Retourne une représentation sous forme de chaîne de caractères de la liste.
+     * @return La représentation de la liste sous forme de chaîne.
+     */
     public String toString() {
         StringBuilder sb = new StringBuilder("ListeSimple(");
         Noeud n = tete;
@@ -52,6 +56,10 @@ public class ListeSimple {
         return sb.toString();
     }
 
+    /**
+     * Supprime la première occurrence d'un élément de la liste.
+     * @param element L'élément à supprimer de la liste.
+     */
     public void supprimePremier(Object element) {
         if (tete != null) {
             if (tete.getElement() == element) {
