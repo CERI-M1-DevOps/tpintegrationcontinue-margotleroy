@@ -285,9 +285,22 @@ class ListeSimpleTest {
         listeATester.ajout(2);
         listeATester.ajout(3);
         listeATester.supprimePremier(4); // L'élément "4" n'est pas dans la liste.
-        // Vérifie que la liste reste inchangée et que la taille n'est pas modifiée.
         assertEquals("ListeSimple(Noeud(3), Noeud(2), Noeud(1))", listeATester.toString());
         assertEquals(3, listeATester.getSize());
     }
+
+    @Test
+    void echangerMemeNoeud() {
+        listeATester.ajout(1);
+        listeATester.ajout(2);
+        listeATester.ajout(3);
+
+        Noeud r1 = listeATester.tete;
+        listeATester.echanger(r1, r1); 
+
+        assertEquals("ListeSimple(Noeud(3), Noeud(2), Noeud(1))", listeATester.toString());
+        assertEquals(3, listeATester.getSize());
+    }
+
 
 }
